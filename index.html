@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokuTumi - Privacy Policy & Terms of Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #D4AF37; /* Gold to match app */
+            --text-color: #2D2D2D;
+            --bg-color: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --border-color: #E0E0E0;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-radius: 16px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        .tab-button {
+            padding: 10px 24px;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .tab-button.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #444;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 40px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                padding: 24px;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>TokuTumi</h1>
+        <p class="subtitle">Privacy Policy & Terms of Service</p>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="showLang('ja')">日本語 (Japanese)</button>
+        <button class="tab-button" onclick="showLang('en')">English</button>
+    </div>
+
+    <!-- Japanese Content -->
+    <div id="content-ja" class="content-section active">
+        <section>
+            <h2>プライバシーポリシー</h2>
+            <p>「TokuTumi」の提供者（以下「当方」といいます）は、ユーザーのプライバシー情報の保護を最優先事項として取り組んでいます。</p>
+            
+            <h3>1. 収集する情報</h3>
+            <ul>
+                <li><strong>認証情報</strong>: 匿名ID（UID）、表示名（ソーシャルログイン利用時のみ）。</li>
+                <li><strong>コンテンツ</strong>: 善行の報告テキスト、AIとの対話履歴。</li>
+                <li><strong>利用ログ</strong>: 操作履歴、徳ポイント履歴、診断情報。</li>
+                <li><strong>端末情報</strong>: OS種類、モデル名、言語設定、匿名識別子。</li>
+                <li><strong>広告識別子</strong>: IDFA（iOS）等。</li>
+            </ul>
+
+            <h3>2. 利用目的</h3>
+            <ul>
+                <li>サービスの提供（認証、データ同期）。</li>
+                <li>AIによる回答生成・徳ポイント判定。</li>
+                <li>サービス改善（不具合修正、新機能開発）。</li>
+                <li>AI精度の向上（個人を特定できない形式での分析・学習）。</li>
+                <li>広告の配信および効果計測。</li>
+            </ul>
+
+            <h3>3. AIへのデータ提供</h3>
+            <p>本アプリはGoogle Gemini API等の外部AIサービスを使用します。入力データは回答生成に必要な範囲で送信されます。データは統計化・抽象化して学習に利用される場合がありますが、個人を識別できる情報は反映されません。</p>
+
+            <h3>4. 第三者提供</h3>
+            <p>法令に基づく場合や運営に必要な範囲（Firebase等）を除き、同意なく第三者に提供することはありません。</p>
+
+            <h3>5. データの削除</h3>
+            <p>アプリ内の「アカウント削除」機能により、いつでもデータを削除できます。</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>利用規約</h2>
+            <h3>第1条（適用）</h3>
+            <p>本規約は、ユーザーと当方との間の本サービスの利用に関わる一切の関係に適用されます。</p>
+            
+            <h3>第2条（概要）</h3>
+            <p>TokuTumiは、善行の記録とAI対話を通じて仮想の神社を成長させるエンターテインメントサービスです。徳ポイントや箱庭の状態は現実の通貨や権利を構成しません。</p>
+
+            <h3>第3条（免責事項）</h3>
+            <p>AIによる回答は自動生成されるものであり、正確性や道徳的妥当性を保証しません。AIの回答に基づく行動の結果について、当方は責任を負いません。</p>
+
+            <h3>第4条（禁止事項）</h3>
+            <ul>
+                <li>アプリの解析（リバースエンジニアリング等）。</li>
+                <li>不正な徳ポイント取得。</li>
+                <li>公序良俗に反するAIへの入力。</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en" class="content-section">
+        <section>
+            <h2>Privacy Policy</h2>
+            <p>The provider of "TokuTumi" prioritizes the protection of user privacy.</p>
+            
+            <h3>1. Information We Collect</h3>
+            <ul>
+                <li><strong>Authentication</strong>: Anonymous IDs (UIDs), display names.</li>
+                <li><strong>Content</strong>: Reports of good deeds, AI interaction history.</li>
+                <li><strong>Usage Logs</strong>: Interaction history, Toku Point logs, diagnostics.</li>
+                <li><strong>Device Data</strong>: OS, model, language settings, anonymous identifiers.</li>
+                <li><strong>Ad Identifiers</strong>: IDFA (iOS), etc.</li>
+            </ul>
+
+            <h3>2. Purpose of Use</h3>
+            <ul>
+                <li>Service provision (auth, data sync).</li>
+                <li>AI response generation and judging Toku points.</li>
+                <li>Service improvement (bugs, new features).</li>
+                <li>AI enhancement (anonymized learning).</li>
+                <li>Advertising and measurement.</li>
+            </ul>
+
+            <h3>3. Data Provision to AI</h3>
+            <p>The app uses external AI services like Google Gemini API. Data is sent to the extent necessary for generating responses. Anonymized data may be used for AI training.</p>
+
+            <h3>4. Third-Party Sharing</h3>
+            <p>Information is not shared except for legal compliance or essential services (e.g., Firebase).</p>
+
+            <h3>5. Data Deletion</h3>
+            <p>Users can delete their data via the "Account Deletion" feature in the app.</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Terms of Service</h2>
+            <h3>Article 1 (Applicability)</h3>
+            <p>These terms govern all usage of the service provided by the provider.</p>
+            
+            <h3>Article 2 (Service Overview)</h3>
+            <p>TokuTumi is an entertainment service for recording deeds and growing a virtual shrine. Toku points have no real-world monetary value.</p>
+
+            <h3>Article 3 (AI Disclaimer)</h3>
+            <p>AI responses are generated automatically; the provider does not guarantee accuracy or moral appropriateness.</p>
+
+            <h3>Article 4 (Prohibited Acts)</h3>
+            <ul>
+                <li>Reverse engineering or analysis.</li>
+                <li>Fraudulent acquisition of points.</li>
+                <li>Sending offensive content to the AI.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TokuTumi. Revised on March 14, 2026.</p>
+    </footer>
+</div>
+
+<script>
+    function showLang(lang) {
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+        
+        document.getElementById('content-' + lang).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
+
