@@ -45,7 +45,6 @@
             font-size: 1.1rem;
         }
         
-        /* Main Tabs (Privacy / TOS / Support) */
         .main-tabs {
             display: flex;
             background: #f1f3f5;
@@ -70,7 +69,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        /* Language Toggle */
         .lang-toggle {
             display: flex;
             justify-content: flex-end;
@@ -99,16 +97,22 @@
             display: block;
         }
 
-        /* Typography */
+        .legal-content {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
         h2 {
             border-left: 5px solid var(--primary-color);
             padding-left: 15px;
             margin-top: 50px;
+            margin-bottom: 25px;
             font-size: 1.8rem;
             color: #1a1a1a;
         }
         h3 {
             margin-top: 35px;
+            margin-bottom: 15px;
             color: #343a40;
             font-size: 1.3rem;
             border-bottom: 1px solid var(--border-color);
@@ -120,21 +124,24 @@
         }
         ul {
             padding-left: 20px;
+            margin-bottom: 20px;
         }
-        .date {
+        .date-info {
             text-align: right;
             margin-top: 50px;
             font-weight: bold;
             color: #6c757d;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
         }
         
-        /* Support Card */
         .support-card {
             background: #fff9db;
             border: 2px dashed #fcc419;
             padding: 30px;
             border-radius: 12px;
             text-align: center;
+            margin-top: 20px;
         }
         .support-card a {
             color: var(--primary-color);
@@ -152,6 +159,11 @@
             border-top: 1px solid var(--border-color);
         }
 
+        .legal-body {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
         @media (max-width: 600px) {
             .container {
                 margin: 0;
@@ -159,7 +171,7 @@
                 border-radius: 0;
             }
             h1 { font-size: 2rem; }
-            .main-tab-button { font-size: 0.85rem; padding: 10px 5px; }
+            .main-tab-button { font-size: 0.8rem; padding: 10px 5px; }
         }
     </style>
 </head>
@@ -184,9 +196,10 @@
 
     <!-- PRIVACY SECTION -->
     <div id="section-privacy" class="content-section active">
-        <div class="lang-content ja">
+        <div class="lang-content ja legal-body">
             <h2>プライバシーポリシー / Privacy Policy</h2>
-            <p>本ドキュメントは、スマートフォン向けアプリケーション「TokuTumi」のプライバシーポリシーです。</p>
+            <p>本ドキュメントは、スマートフォン向けアプリケーション「TokuTumi」のプライバシーポリシーです。日本語版と英語版を併記しております。</p>
+            <hr>
             <h3>1. 収集する情報</h3>
             <p>本アプリでは、以下の情報を収集・取得する場合があります。</p>
             <ul>
@@ -197,6 +210,7 @@
                 <li><strong>広告識別子</strong>: IDFA（iOS）等、広告配信・効果測定用の識別子。</li>
             </ul>
             <h3>2. 利用目的</h3>
+            <p>収集した情報は、以下の目的で利用されます。</p>
             <ul>
                 <li><strong>サービスの提供</strong>: ユーザー認証、データの保存、および同期。</li>
                 <li><strong>AI回答生成</strong>: ユーザーの入力に基づき、AIによる適切なフィードバックや徳ポイントの判定を行う。</li>
@@ -206,76 +220,156 @@
             </ul>
             <h3>3. AI（人工知能）へのデータ提供と学習</h3>
             <p>1. 本アプリは、回答生成のために外部のAIサービス（Google Gemini API 等）を使用しています。ユーザーが入力したテキストデータは、回答生成に必要な範囲でこれらのサービスに送信されます。</p>
-            <p>2. 当方は、提供するAIサービスの精度向上のため、収集したデータを統計化・抽象化し、個人が特定されない安全な状態で分析・学習に利用する場合があります。</p>
+            <p>2. 当方は、提供するAIサービスの精度向上のため、収集したデータを統計化・抽象化し、個人が特定されない安全な状態で分析・学習に利用する場合があります。この過程で、特定の個人を識別できる情報がAI学習に反映されることはありません。</p>
             <h3>4. 第三者への情報提供</h3>
             <p>当方は、以下の場合を除き、ユーザーの個人情報を第三者に提供しません。</p>
             <ul>
                 <li>ユーザーの同意がある場合。</li>
-                <li>法令に基づく開示請求があった場合。</li>
-                <li>Firebase（Google）等のサービス提供者に業務を委託する場合。</li>
+                <li>法令に基づく開示請求（裁判所、警察等）があった場合。</li>
+                <li>Firebase（Google）、クラウドインフラ、および解析ツール等のサービス提供者に、運営に必要な範囲で業務を委託する場合。</li>
+                <li>人の生命、身体または財産の保護のために必要な緊急事態。</li>
             </ul>
-            <h3>5. データの削除</h3>
-            <p>ユーザーは、本アプリ内の「アカウント削除」機能を通じて、自身のデータをいつでも削除することができます。</p>
-            <p class="date">発行日：2026年3月14日</p>
+            <h3>5. データの管理と安全対策</h3>
+            <p>1. 当方は、収集した情報の漏洩、紛失、または不正アクセスを防止するため、最新のセキュリティ対策（暗号化通信、アクセス制限等）を講じています。</p>
+            <p>2. データ管理の責任者は当方とし、不適切な取り扱いや事故が発生した場合には、迅速に調査および高度な是正措置を行います。</p>
+            <h3>6. 国際的なデータ転送</h3>
+            <p>本アプリのインフラストラクチャ（Firebase等）は、日本国外（米国等）のサーバーを使用している場合があります。ユーザーは、自身のデータが提供国以外に転送される可能性があることに同意するものとします。</p>
+            <h3>7. データの照会・削除</h3>
+            <p>ユーザーは、本アプリ内の「アカウント削除」機能を通じて、自身のデータをいつでも削除することができます。削除依頼があった場合、当方のサーバー上の関連データは速やかに消去されます（バックアップ等からの完全な消去には一定期間を要する場合があります）。</p>
+            <h3>8. ポリシーの変更</h3>
+            <p>当方は、法令の改正や本サービスの更新に伴い、本ポリシーを随時改定することができるものとします。重大な変更がある場合は、本アプリ内または公式サイトで通知します。</p>
+            <p class="date-info">発行日：2026年3月14日</p>
         </div>
-        <div class="lang-content en" style="display:none">
+        <div class="lang-content en legal-body" style="display:none">
             <h2>Privacy Policy</h2>
+            <p>The Provider of "TokuTumi" prioritizes the protection of User privacy. This Privacy Policy outlines how your information is collected, used, and managed.</p>
+            <hr>
             <h3>1. Information We Collect</h3>
             <ul>
-                <li><strong>Authentication Data</strong>: Anonymous IDs (UIDs) and display names.</li>
-                <li><strong>User Content</strong>: Reports of good deeds and AI interaction history.</li>
-                <li><strong>Usage Logs</strong>: Interaction history, Toku Point logs, and diagnostic data.</li>
-                <li><strong>Device Information</strong>: OS type, model name, and anonymous identifiers.</li>
+                <li><strong>Authentication Data</strong>: Anonymous IDs (UIDs) from social logins and display names.</li>
+                <li><strong>User Content</strong>: Reports of good deeds and interaction history with the AI.</li>
+                <li><strong>Usage Logs</strong>: Interaction history, Toku Point logs, and error/diagnostic data.</li>
+                <li><strong>Device Information</strong>: OS type, model name, language settings, and anonymous identifiers.</li>
                 <li><strong>Ad Identifiers</strong>: IDFA (iOS) for advertising and measurement.</li>
             </ul>
             <h3>2. Purpose of Use</h3>
             <ul>
-                <li><strong>Service Provision</strong>: Authentication and data synchronization.</li>
-                <li><strong>AI Generation</strong>: Providing feedback and judging Toku Points via AI.</li>
-                <li><strong>Improvement</strong>: Bug fixes and developing new features.</li>
-                <li><strong>AI Training</strong>: Optimizing AI models using anonymized data.</li>
-                <li><strong>Advertising</strong>: Delivering personalized ads.</li>
+                <li><strong>Service Provision</strong>: User authentication, data storage, and synchronization.</li>
+                <li><strong>AI Response Generation</strong>: Generating feedback and judging Toku Points based on inputs.</li>
+                <li><strong>Service Improvement</strong>: Bug fixing, improving UX, and developing new features.</li>
+                <li><strong>AI Enhancement</strong>: Optimizing AI models by using anonymized and aggregated input data (secondary use).</li>
+                <li><strong>Advertising</strong>: Delivering personalized ads and measuring their effectiveness.</li>
             </ul>
-            <h3>3. Data Provision to AI</h3>
-            <p>1. The App uses external AI services (e.g., Google Gemini API). User inputs are transmitted necessary for generating responses.</p>
-            <p>2. Anonymized data may be used for statistical analysis and AI performance optimization.</p>
+            <h3>3. Data Provision to AI and Training</h3>
+            <p>1. The App uses external AI services (e.g., Google Gemini API). Text provided by the User is transmitted to these services for generating responses.</p>
+            <p>2. Anonymized data may be used for statistical analysis to improve AI performance. Personal identifiers are strictly removed during this process.</p>
             <h3>4. Third-Party Sharing</h3>
-            <p>Personal information will not be shared except for legal compliance or necessary service providers (e.g., Firebase).</p>
-            <h3>5. Data Access and Deletion</h3>
+            <p>Personal information will not be shared with third parties except:</p>
+            <ul>
+                <li>With User consent.</li>
+                <li>To comply with legal obligations (court orders, etc.).</li>
+                <li>Entrusting operations to service providers (e.g., Firebase) necessary for operation.</li>
+                <li>To protect human life, health, or property in emergencies.</li>
+            </ul>
+            <h3>5. Data Security and Management</h3>
+            <p>1. The Provider implements security measures (encryption, access controls) to prevent unauthorized access or leakage.</p>
+            <p>2. The Provider is responsible for data management and will act swiftly to investigate and rectify any incidents.</p>
+            <h3>6. International Data Transfer</h3>
+            <p>Infrastructure (e.g., Firebase) may involve servers located outside of Japan (e.g., the USA).</p>
+            <h3>7. Data Access and Deletion</h3>
             <p>Users can delete their data via the "Account Deletion" feature in the App.</p>
-            <p class="date">Effective Date: March 14, 2026</p>
+            <h3>8. Policy Changes</h3>
+            <p>This Policy may be updated to reflect legal or service changes.</p>
+            <p class="date-info">Effective Date: March 14, 2026</p>
         </div>
     </div>
 
     <!-- TOS SECTION -->
     <div id="section-tos" class="content-section">
-        <div class="lang-content ja">
-            <h2>利用規約</h2>
+        <div class="lang-content ja legal-body">
+            <h2>利用規約 / Terms of Service</h2>
+            <p>本ドキュメントは、スマートフォン向けアプリケーション「TokuTumi」の利用規約です。日本語版と英語版を併記しております。</p>
+            <hr>
+            <h3>第1条（適用）</h3>
+            <p>1. 本規約は、本アプリの利用者（以下「ユーザー」といいます）と当方との間の本サービスの利用に関わる一切の関係に適用されるものとします。</p>
+            <p>2. ユーザーは、本アプリをダウンロード、インストール、または利用することにより、本規約の全ての条項に同意したものとみなされます。</p>
             <h3>第2条（サービスの概要と徳ポイント）</h3>
-            <p>TokuTumiは、ユーザーが日々の善行を記録し、AIとの対話を通じて「徳ポイント」を蓄積することで、仮想の神社の境内を成長させる体験を提供するエンターテインメントサービスです。</p>
+            <p>1. TokuTumiは、ユーザーが日々の善行を記録し、AI（人工知能）との対話を通じて「徳ポイント」を蓄積することで、仮想の神社の境内に位置する箱庭を成長させる体験を提供するエンターテインメントサービスです。</p>
+            <p>2. 本アプリ内で表現される神社の建物、景観、およびキャラクター等は全て架空のものであり、実在の宗教団体、寺社仏閣、または特定の建造物とは一切関係ありません。</p>
+            <p>3. 徳ポイントおよび箱庭の成長状態は、本アプリ内での演出およびゲーム的要素としてのみ機能するものであり、現実の通貨、財物、または法的権利を構成するものではありません。</p>
+            <p>4. 当方は、理由の如何を問わず、ユーザーに事前に通知することなく、本サービスの仕様、徳ポイントの付与基準、またはコンテンツの内容を変更・中止することができるものとします。</p>
             <h3>第3条（利用上の注意）</h3>
-            <p>ユーザーは自己の責任において本アプリを利用するものとします。インターネット接続環境が必要です。</p>
+            <p>1. ユーザーは、自己の責任において本アプリを利用するものとします。</p>
+            <p>2. 本アプリの利用には、インターネット接続環境が必要です。通信料はユーザーの負担となります。</p>
+            <p>3. 本アプリの対応OSや動作環境は、当方が別途指定する通りとします。指定外の環境での動作は保証いたしません。</p>
+            <p>4. 本アプリの利用権はユーザー本人に帰属し、これを第三者に譲渡、貸与、または相続させることはできません。</p>
+            <h3>第4条（アカウントおよび認証）</h3>
+            <p>1. ユーザーは、当方が指定する方法（匿名認証、ソーシャルログイン等）を用いて本アプリを利用することができます。</p>
+            <p>2. ユーザーは、自己の責任において認証情報を管理するものとします。</p>
+            <p>3. デバイスの紛失、故障、またはアプリの削除によりデータが失われた場合、当方は技術的に可能な範囲を超えてデータの復旧を行う法的義務を負わないものとします。</p>
             <h3>第5条（AI生成コンテンツと免責）</h3>
-            <p>1. TokuTumiが提供する回答や判定は、生成AIによって自動的に生成されるものであり、その正確性、道徳的妥当性、または有用性を当方が保証するものではありません。</p>
-            <p>2. AIの回答に基づくユーザーの判断や行動により生じた結果について、当方は一切の責任を負いません。</p>
+            <p>1. TokuTumiが提供する回答や判定は、生成AIによって自動的に生成されるものであり、その正確性、道徳的妥当性、または有用性を当方が保証するものではありません。AIの回答に基づくユーザーの判断や行動により生じた結果について、当方は一切の責任を負いません。</p>
+            <p>2. ユーザーが入力した内容およびAIが生成した回答は、本サービスの維持、品質向上、およびAIの精度向上のため、当方のサーバーに保存・利用される場合があります。</p>
             <h3>第6条（禁止事項）</h3>
-            <p>アプリの解析、不正なポイント取得、AIへの誹謗中傷等は禁止されています。</p>
+            <p>ユーザーは、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+            <ul>
+                <li>本アプリの解析、リバースエンジニアリング、逆コンパイル等を行う行為。</li>
+                <li>当方または第三者の著作権、知的財産権等を侵害する行為。</li>
+                <li>虚偽の内容を報告して不正に徳ポイントを取得する行為。</li>
+                <li>AIに対して公序良俗に反する内容、誹謗中傷を送る行為。</li>
+                <li>本アプリの運営を妨害する行為。</li>
+            </ul>
+            <h3>第7条（データおよびバックアップ）</h3>
+            <p>1. ユーザーの本サービスにおける利用データは、原則として当方が管理するサーバーに保存されます。</p>
+            <p>2. 当方はデータの消失を防ぐ努力を行いますが、不可抗力によりデータが失われた場合、その復旧について責任を負わないものとします。</p>
+            <p>3. 当方はサービスの利便性向上等を目的として、ユーザーデータの解析を行うことができるものとします。</p>
             <h3>第8条（免責および損害賠償）</h3>
-            <p>当方の過失により損害賠償責任が発生する場合、その額は当該ユーザーが当方に直近1ヶ月間に支払った金額（または1,000円のいずれか高い方）を上限とします。</p>
-            <p class="date">改定日：2026年3月14日</p>
+            <p>1. 当方は、当方の故意または重過失がある場合を除き、ユーザーに生じた損害について一切の責任を負いません。</p>
+            <p>2. 当方の過失により損害賠償責任が発生する場合、その額は当該ユーザーが当方に直近1ヶ月間に支払った金額（または1,000円のいずれか高い方）を上限とします。</p>
+            <h3>第9条（準拠法・裁判管轄）</h3>
+            <p>1. 本規約の準拠法は日本法とします。</p>
+            <p>2. 本サービスに関する一切の紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+            <p class="date-info">改定日：2026年3月14日</p>
         </div>
-        <div class="lang-content en" style="display:none">
+        <div class="lang-content en legal-body" style="display:none">
             <h2>Terms of Service</h2>
-            <h3>Article 2 (Service Overview)</h3>
-            <p>TokuTumi is an entertainment service where users grow a virtual shrine by recording good deeds and interacting with AI.</p>
+            <p>These Terms of Service set forth the conditions for using "TokuTumi" provided by the Provider.</p>
+            <hr>
+            <h3>Article 1 (Applicability)</h3>
+            <p>1. These Terms apply to all relationships between the User and the Provider.</p>
+            <p>2. By using the App, the User is deemed to have agreed to all clauses of these Terms.</p>
+            <h3>Article 2 (Service Overview and Toku Points)</h3>
+            <p>1. TokuTumi is an entertainment service where Users record good deeds and interact with AI to grow a virtual shrine diorama.</p>
+            <p>2. All shrine elements are fictional and have no affiliation with any actual religious organizations.</p>
+            <p>3. Toku Points have no real-world currency or legal value.</p>
+            <p>4. The Provider may change or discontinue service specifications at any time.</p>
+            <h3>Article 3 (Usage Precautions)</h3>
+            <p>1. Users use the App at their own risk. Internet connection is required.</p>
+            <p>2. Users are responsible for communication fees.</p>
+            <p>3. Usage rights cannot be transferred to third parties.</p>
+            <h3>Article 4 (Account and Authentication)</h3>
+            <p>1. Users represent they will use designated authentication methods.</p>
+            <p>2. Users are responsible for managing their authentication information.</p>
             <h3>Article 5 (AI-Generated Content)</h3>
             <p>1. Responses are generated by AI. The Provider does not guarantee accuracy or moral appropriateness.</p>
             <p>2. The Provider is not liable for outcomes arising from actions based on AI responses.</p>
             <h3>Article 6 (Prohibited Acts)</h3>
-            <p>Reverse engineering, fraudulent point acquisition, and sending offensive content to the AI are prohibited.</p>
+            <ul>
+                <li>Reverse engineering or analysis.</li>
+                <li>Infringing copyrights or intellectual property.</li>
+                <li>Reporting false information to acquire points.</li>
+                <li>Sending offensive content to the AI.</li>
+            </ul>
+            <h3>Article 7 (Data and Backup)</h3>
+            <p>1. Usage data is stored on servers managed by the Provider.</p>
+            <p>2. The Provider is not liable for data loss caused by technical failures.</p>
             <h3>Article 8 (Limitation of Liability)</h3>
-            <p>Liability is limited to the amount paid in the past month or 1,000 JPY, whichever is higher.</p>
-            <p class="date">Revised: March 14, 2026</p>
+            <p>1. Except for intentional misconduct, the Provider is not liable for damages.</p>
+            <p>2. Liability is limited to the amount paid in the past month or 1,000 JPY.</p>
+            <h3>Article 9 (Governing Law and Jurisdiction)</h3>
+            <p>1. These Terms shall be governed by the laws of Japan.</p>
+            <p>2. Disputes shall be subject to the exclusive jurisdiction of the Tokyo District Court.</p>
+            <p class="date-info">Revised: March 14, 2026</p>
         </div>
     </div>
 
@@ -293,7 +387,7 @@
             <h2>Support / Contact</h2>
             <p>For bug reports, feature requests, or any other inquiries, please contact us below:</p>
             <div class="support-card">
-                <p>E-mail: <a href="mailto:tokutumi.adv@gmail.com">tokutumi.adv@gmail.com</a></p>
+                <p><a href="mailto:tokutumi.adv@gmail.com">tokutumi.adv@gmail.com</a></p>
             </div>
             <p style="margin-top:20px;">*When contacting support, please include your device model, OS version, and a clear description of the issue.</p>
         </div>
@@ -314,7 +408,6 @@
         document.querySelectorAll('.main-tab-button').forEach(b => b.classList.remove('active'));
         
         document.getElementById('section-' + sectionId).classList.add('active');
-        // Find and highlight the button
         document.querySelector(`.main-tab-button[onclick="showSection('${sectionId}')"]`).classList.add('active');
         
         updateSubtitle();
